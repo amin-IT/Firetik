@@ -38,7 +38,7 @@ start-date=jan/01/1970 start-time=08:56:27
 # Script to run the ReplaceFirehol script for initial setup
 /system script run ReplaceFirehol
 
-After copy/pasting the scripts above, add a drop rule for Dst. Address List firehol in forward chain BELOW the accept rule for established, related, untracked connections (defconf). OR you can check the connection-state=new on the firehol drop rule. It should look like this:
+After copy/pasting the scripts above, add a drop rule for Dst. Address List firehol in forward chain BELOW the accept rule for established, related, untracked connections (defconf). OR you can check the connection-state=new on the firehol drop rule.
 
 # Script to add the firehol list in Firewall Filter Rules
 
