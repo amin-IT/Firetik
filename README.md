@@ -27,13 +27,11 @@ Code: (copy/paste to terminal)
 # Schedule the download and application of the Firehol list
 /system scheduler add comment="Download Firehol list" interval=1d \
 
-name="DownloadFireholList" on-event=DownloadFirehol \
-start-date=jan/01/1970 start-time=08:51:27
+name="DownloadFireholList" on-event=DownloadFirehol start-date=jan/01/1970 start-time=08:51:27
 
 /system scheduler add comment="Apply Firehol list" interval=1d \
 
-name="InstallFireholList" on-event=ReplaceFirehol \
-start-date=jan/01/1970 start-time=08:56:27
+name="InstallFireholList" on-event=ReplaceFirehol start-date=jan/01/1970 start-time=08:56:27
 
 # Run the DownloadFirehol script for initial setup
 /system script run DownloadFirehol
