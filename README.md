@@ -37,4 +37,4 @@ start-date=jan/01/1970 start-time=08:51:27
 name="InstallFireholList" on-event=ReplaceFirehol \
 start-date=jan/01/1970 start-time=08:56:27
 
-#Thanks for Joshaven for sharing his automated script and to Firehol.org for sharing their list of malicious IPs
+#Thanks to Joshaven for sharing his automated script and to Firehol.org for sharing their list of malicious IPs
