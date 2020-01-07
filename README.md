@@ -12,8 +12,12 @@ which you can find here: https://raw.githubusercontent.com/ktsaou/blocklist-ipse
 
 IMPLEMENTATION:
 
-After copy/pasting the code below, add the firehol drop rule after accepting established, related, untracked connections (defcon). 
-OR you can check the connection-state=new on the firehol drop rule. 
+After copy/pasting the code below, add the firehol drop rule (Dst. Address list) BELOW the accept rule for established, related, untracked connections (defcon). OR you can check the connection-state=new on the firehol drop rule. It should look like these:
+
+/ip firewall filter
+add chain=forward action=drop comment="Firehol list" \
+    connection-state=new dst-address-list=firehol
+    
 This way established connections will be accepted immediately and it will disregard the firehol address list which will minimize
 the impact of the long address list on the performance of your Mikrotik router
 
