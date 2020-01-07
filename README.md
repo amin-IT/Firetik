@@ -12,7 +12,7 @@ which you can find here: https://raw.githubusercontent.com/ktsaou/blocklist-ipse
 
 IMPLEMENTATION:
 
-Code: (copy/paste to terminal)
+Code: (copy each block and paste it to terminal)
 # Script which will download the drop list as a text file
 /system script add name="DownloadFirehol" source={
 /tool fetch url="https://amin-firetik.000webhostapp.com/firehol/firehol.rsc" mode=https;
