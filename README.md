@@ -48,6 +48,6 @@ After copy/pasting the scripts above, add a drop rule for Dst. Address List fire
 add chain=forward action=drop comment="Firehol list" connection-state=new dst-address-list=firehol
     
 This way established connections will be accepted immediately and it will disregard the firehol address list which will minimize
-the impact of the long address list on the performance of your Mikrotik router
+the impact of the long address list on the performance of your Mikrotik router.
 
 #Thanks to Joshaven for sharing his automated scripts and to Firehol.org for sharing their list of malicious IPs
