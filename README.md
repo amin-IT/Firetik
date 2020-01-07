@@ -15,7 +15,7 @@ IMPLEMENTATION:
 After copy/pasting the code below, add the firehol drop rule after accepting established, related, untracked connections (defcon). 
 OR you can check the connection-state=new on the firehol drop rule. 
 This way established connections will be accepted immediately and it will disregard the firehol address list which will minimize
-the impact of the long address list on your Mikrotik router
+the impact of the long address list on the performance of your Mikrotik router
 
 Code: (copy/paste to terminal)
 # Script which will download the drop list as a text file
