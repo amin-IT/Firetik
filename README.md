@@ -22,8 +22,7 @@ Code: (copy/paste to terminal)
 /system script add name="ReplaceFirehol" source={
 /ip firewall address-list remove [find where comment="firehol"]
 
-/import file-name=firehol.rsc;
-}
+/import file-name=firehol.rsc;}
 
 # Schedule the download and application of the Firehol list
 /system scheduler add comment="Download Firehol list" interval=1d \
