@@ -12,7 +12,7 @@ which you can find here: https://raw.githubusercontent.com/ktsaou/blocklist-ipse
 
 IMPLEMENTATION:
 
-After copy/pasting the code below, add the firehol drop rule (Dst. Address list) BELOW the accept rule for established, related, untracked connections (defcon). OR you can check the connection-state=new on the firehol drop rule. It should look like these:
+After copy/pasting the code below, add the firehol drop rule (Dst. Address list) BELOW the accept rule for established, related, untracked connections (defcon). OR you can check the connection-state=new on the firehol drop rule. It should look like this:
 
 /ip firewall filter
 add chain=forward action=drop comment="Firehol list" \
