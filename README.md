@@ -7,8 +7,9 @@ My Firetik script is automatically maintained via a VBScript that gets a list of
 and translates it to RouterOs script. I host the script at https://amin-firetik.000webhostapp.com/firehol/firehol.rsc. 
 The output rsc file is synchronized from my personal computers via ftp which my vbscript updates regularly triggered by task scheduler daily. 
 
-The script works like Malwarebytes Website Protection for your network but the list of malicious IPs is from Firehol_level1
-which you can find here: https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/firehol_level1.netset
+The script works like Malwarebytes Website Protection for your network but the dynamic list of malicious IPs is from Firehol_level1
+which they update on a regular basis. 
+You can find it here: https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/firehol_level1.netset
 
 IMPLEMENTATION:
 
@@ -50,4 +51,4 @@ add chain=forward action=drop comment="Firehol list" connection-state=new dst-ad
 This way established connections will be accepted immediately and it will disregard the firehol address list which will minimize
 the impact of the long address list on the performance of your Mikrotik router.
 
-#Thanks to Joshaven for sharing his automated scripts and to Firehol.org for sharing their list of malicious IPs
+#Thanks to Joshaven for sharing his automated scripts and to Firehol.org for sharing their dynamic list of malicious IPs
