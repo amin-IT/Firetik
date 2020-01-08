@@ -1,5 +1,5 @@
 # Firetik
-A RouterOs script (Mikrotik) to block malicious IPs listed on Firehol_level1
+A RouterOs script (Mikrotik) to block a dynamic list of malicious IPs from Firehol_level1
 
 
 
