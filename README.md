@@ -15,18 +15,22 @@ You can find it here: https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/
 IMPLEMENTATION:
 
 Code: (copy each block and paste it to terminal)
+------------------------------------------------------------------------------------------------------------------------------
 # Script which will download the drop list as a text file
+------------------------------------------------------------------------------------------------------------------------------
 /system script add name="DownloadFirehol" source={
 /tool fetch url="https://amin-firetik.000webhostapp.com/firehol/firehol.rsc" mode=https;
 }
-
+------------------------------------------------------------------------------------------------------------------------------
 # Script which will Remove old Firehol list and add new one
+------------------------------------------------------------------------------------------------------------------------------
 /system script add name="ReplaceFirehol" source={
 /ip firewall address-list remove [find where comment="firehol"]
 
 /import file-name=firehol.rsc;}
-
+------------------------------------------------------------------------------------------------------------------------------
 # Schedule the download and application of the Firehol list
+------------------------------------------------------------------------------------------------------------------------------
 /system scheduler add comment="Download Firehol list" interval=1d \
 
 name="DownloadFireholList" on-event=DownloadFirehol start-date=jan/01/1970 start-time=08:51:27
@@ -34,13 +38,15 @@ name="DownloadFireholList" on-event=DownloadFirehol start-date=jan/01/1970 start
 /system scheduler add comment="Apply Firehol list" interval=1d \
 
 name="InstallFireholList" on-event=ReplaceFirehol start-date=jan/01/1970 start-time=08:56:27
-
+------------------------------------------------------------------------------------------------------------------------------
 # Run the DownloadFirehol script for initial setup
+------------------------------------------------------------------------------------------------------------------------------
 /system script run DownloadFirehol
-
+------------------------------------------------------------------------------------------------------------------------------
 # Run the ReplaceFirehol script for initial setup
+------------------------------------------------------------------------------------------------------------------------------
 /system script run ReplaceFirehol
-
+------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------
 After copy/pasting the scripts above, add a drop rule for Dst. Address List firehol in forward chain BELOW the accept rule for established, related, untracked connections (defconf). OR you can check the connection-state=new on the firehol drop rule.
 
