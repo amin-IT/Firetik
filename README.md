@@ -58,7 +58,7 @@ name="InstallFireholList" on-event=ReplaceFirehol start-date=jan/01/1970 start-t
 ------------------------------------------------------------------------------------------------------------------------------
 
 
-After copy/pasting the scripts above, add a drop rule for Dst. Address List firehol in forward chain BELOW the accept rule for established, related, untracked connections (defconf). OR you can check the connection-state=new on the firehol drop rule.
+After copy/pasting the scripts above, add a drop rule for Dst. Address List firehol in forward chain BELOW the accept rule for established, related, untracked connections (defconf). OR you can copy the script below which will create the drop rule and check the connection-state=new.
 
 This way established connections will be accepted immediately and it will disregard the firehol address list on its 2nd cycle to the filter rules. Meaning, the long firehol address list will have no impact on the performance of your router once the connection passed the 1st cycle.
 
