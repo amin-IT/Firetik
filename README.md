@@ -44,13 +44,13 @@ name="DownloadFireholList" on-event=DownloadFirehol start-date=jan/01/1970 start
 name="InstallFireholList" on-event=ReplaceFirehol start-date=jan/01/1970 start-time=08:56:27
 
 ------------------------------------------------------------------------------------------------------------------------------
-# Run the DownloadFirehol script for initial setup
+# Run the DownloadFirehol script for first-time setup
 ------------------------------------------------------------------------------------------------------------------------------
 
 /system script run DownloadFirehol
 
 ------------------------------------------------------------------------------------------------------------------------------
-# Run the ReplaceFirehol script for initial setup
+# Run the ReplaceFirehol script for first-time setup
 ------------------------------------------------------------------------------------------------------------------------------
 
 /system script run ReplaceFirehol
