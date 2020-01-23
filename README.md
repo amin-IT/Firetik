@@ -9,7 +9,7 @@ The output rsc file is synchronized from my personal computers via ftp which my 
 
 The script works like Malwarebytes Website Protection for your network but the list of malicious IPs is from Firehol_level1
 which they update on a regular basis.
-You can find it here: https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/firehol_level1.netset
+You can learn more about the list here: http://iplists.firehol.org/
 
 IMPLEMENTATION:
 
