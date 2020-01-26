@@ -7,8 +7,8 @@ My Firetik script is automatically maintained via a VBScript that gets a list of
 and translates it to RouterOs script. I host the script at https://amin-firetik.000webhostapp.com/firehol/firehol.rsc. 
 The output rsc file is synchronized from my personal computers via ftp which my vbscript updates regularly triggered by task scheduler. 
 
-The script works like Malwarebytes Website Protection for your network but the list of malicious IPs is from Firehol_level1
-which they update on a regular basis.
+The script works like Malwarebytes Website Protection for your network with Firehol_Level1's dynamic list of malicious IPs as your database.
+
 You can learn more about the list here: http://iplists.firehol.org/
 
 IMPLEMENTATION:
