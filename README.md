@@ -27,6 +27,7 @@ Code: (copy each block and paste it to terminal)
 ------------------------------------------------------------------------------------------------------------------------------
 
 /file
+
 :global firehol [/file get firehol.rsc contents];
 :if (firehol != "") do={/ip firewall address-list remove [find where comment="firehol"]
 
