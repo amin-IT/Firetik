@@ -26,12 +26,12 @@ Code: (copy each block and paste it to terminal)
 # Script which will Remove old Firehol list and add new one
 ------------------------------------------------------------------------------------------------------------------------------
 
-/file
+/system script add name="ReplaceFirehol" source={/file
 
 :global firehol [/file get firehol.rsc contents];
 :if (firehol != "") do={/ip firewall address-list remove [find where comment="firehol"]
 
-/import file-name=firehol.rsc;}
+/import file-name=firehol.rsc;}}
 
 ------------------------------------------------------------------------------------------------------------------------------
 # Schedule the download and application of the Firehol list
