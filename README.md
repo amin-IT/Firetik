@@ -4,7 +4,7 @@ A RouterOs (Mikrotik) script to block a dynamic list of malicious IPs from Fireh
 
 
 My Firetik script is automatically maintained via a VBScript that gets a list of malicious IPs from firehol_level1 
-and translates it to RouterOs script. I host the script at https://amin-firetik.000webhostapp.com/firehol/firehol.rsc. 
+and translates it to RouterOs script. I host the script at https://amin-it-consulting.com/firehol/firehol.rsc. 
 The output rsc file is synchronized from my personal computers via ftp which my vbscript updates regularly triggered by task scheduler. 
 
 The script works like an Antivirus for your network that blocks malicious IPs with Firehol_Level1's dynamic list as your database.
@@ -19,7 +19,7 @@ Code: (copy each block and paste it to terminal)
 ------------------------------------------------------------------------------------------------------------------------------
 
 /system script add name="DownloadFirehol" source={
-/tool fetch url="https://amin-firetik.000webhostapp.com/firehol/firehol.rsc" mode=https;
+/tool fetch url="https://amin-it-consulting.com/firehol/firehol.rsc" mode=https;
 }
 
 ------------------------------------------------------------------------------------------------------------------------------
