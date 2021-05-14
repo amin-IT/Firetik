@@ -1,7 +1,7 @@
 Update: New domain at www.amin-it-consulting.com
 
 # Firetik
-A RouterOs (Mikrotik) script to block a dynamic list of malicious IPs from Firehol_level1
+Mikrotik Firewall - A RouterOs to block a dynamic list of malicious IPs from Firehol_level1
 
 
 
