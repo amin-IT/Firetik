@@ -1,4 +1,4 @@
-Update: New domain at www.amin-it-consulting.com
+Update: New domain at www.binary.ph
 
 # Firetik
 Mikrotik Firewall - A RouterOs script to block a dynamic list of malicious IPs from Firehol_level1
@@ -21,7 +21,7 @@ Code: (copy each block and paste it to terminal)
 ------------------------------------------------------------------------------------------------------------------------------
 
 /system script add name="DownloadFirehol" source={
-/tool fetch url="https://amin-it-consulting.com/firehol/firehol.rsc" mode=https;
+/tool fetch url="https://binary.ph/firehol/firehol.rsc" mode=https;
 }
 
 ------------------------------------------------------------------------------------------------------------------------------
