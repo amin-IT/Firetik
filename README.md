@@ -6,7 +6,7 @@ Mikrotik Firewall - A RouterOs script to block a dynamic list of malicious IPs f
 
 
 My Firetik script is automatically maintained via a VBScript that gets a list of malicious IPs from firehol_level1 
-and translates it to RouterOs script. I host the script at https://amin-it-consulting.com/firehol/firehol.rsc. 
+and translates it to RouterOs script. I host the script at https://binary.ph/firehol/firehol.rsc. 
 The output rsc file is synchronized from my personal computers via ftp which my vbscript updates regularly triggered by task scheduler. 
 
 The script works like an Antivirus for your network that blocks malicious IPs with Firehol_Level1's dynamic list as your database.
