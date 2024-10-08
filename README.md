@@ -60,19 +60,17 @@ name="InstallFireholList" on-event=ReplaceFirehol start-date=jan/01/1970 start-t
 /system script run ReplaceFirehol
 
 ------------------------------------------------------------------------------------------------------------------------------
-
-
-After copy/pasting the scripts above, add a drop rule for Dst. Address List firehol in forward chain BELOW the accept rule for established, related, untracked connections (defconf). OR you can copy the script below which will create the drop rule and check the connection-state=new.
-
-This way established connections will be accepted immediately and it will disregard the firehol address list on its 2nd cycle to the filter rules. Meaning, the long firehol address list will have no impact on the performance of your router once the connection passed the 1st cycle.
-
-------------------------------------------------------------------------------------------------------------------------------
 # Script to add the firehol list in Firewall Filter Rules
 ------------------------------------------------------------------------------------------------------------------------------
 
 /ip firewall filter
 
 add chain=forward action=drop comment="Firehol list" connection-state=new dst-address-list=firehol
+
+#To effectively apply the blocklists, it's recommended to target the internet-facing interface rather than implementing a global block, 
+as the list contains private IPs. This ensures that the specified IP addresses are blocked solely on your WAN connection. For instance, 
+if the internet connection is on ether1, set the Out. Interface to ether1. For setups with multiple internet connections, 
+you can create an interface list under Interfaces > List, name it WAN, and use this list in the Out. Interface List field.
     
 ------------------------------------------------------------------------------------------------------------------------------
 
