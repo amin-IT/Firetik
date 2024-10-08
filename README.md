@@ -74,6 +74,12 @@ you can create an interface list under Interfaces > List, name it WAN, and use t
 
 ![image](https://github.com/user-attachments/assets/8602f11e-8ccc-437a-a124-cb13e4fb20fc)
 
+------------------------------------------------------------------------------------------------------------------------------
+
+IPv6 Firewall: https://binary.ph/ipv6
+
+You may contact me for support in applying other levels, see [About page](https://binary.ph/about/).
+
     
 ------------------------------------------------------------------------------------------------------------------------------
 
