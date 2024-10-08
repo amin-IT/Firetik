@@ -71,6 +71,9 @@ add chain=forward action=drop comment="Firehol list" connection-state=new dst-ad
 as the list contains private IPs. This ensures that the specified IP addresses are blocked solely on your WAN connection. For instance, 
 if the internet connection is on ether1, set the Out. Interface to ether1. For setups with multiple internet connections, 
 you can create an interface list under Interfaces > List, name it WAN, and use this list in the Out. Interface List field.
+
+![image](https://github.com/user-attachments/assets/8602f11e-8ccc-437a-a124-cb13e4fb20fc)
+
     
 ------------------------------------------------------------------------------------------------------------------------------
 
