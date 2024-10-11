@@ -67,7 +67,7 @@ name="InstallFireholList" on-event=ReplaceFirehol start-date=jan/01/1970 start-t
 
 add chain=forward action=drop comment="Firehol list" connection-state=new dst-address-list=firehol
 
-#To effectively apply the blocklists, it's recommended to target the internet-facing interface rather than implementing a global block, 
+#To effectively apply the blacklists, it's recommended to target the internet-facing interface rather than implementing a global block, 
 as the list contains private IPs. This ensures that the specified IP addresses are blocked solely on your WAN connection. For instance, 
 if the internet connection is on ether1, set the Out. Interface to ether1. For setups with multiple internet connections, 
 you can create an interface list under Interfaces > List, name it WAN, and use this list in the Out. Interface List field.
