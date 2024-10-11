@@ -1,17 +1,15 @@
 Update: New domain at www.binary.ph
 
-# Firetik
-Mikrotik Firewall - A RouterOs script to block a dynamic list of malicious IPs from Firehol_level1
+# Firetik 
 
+This is a network firewall script that utilizes a dynamic blacklist of malicious IP addresses. The blacklist is primarily sourced from Firehol, which aggregates data from multiple threat intelligence feeds. These feeds include:
 
+Fullbogons: Unroutable IP addresses.
+Spamhaus DROP and EDROP: Known spam and abuse sources.
+Dshield: Top 20 attacking Class C networks.
+Malware lists: Command and Control (C&C) IP addresses associated with malware.
 
-My Firetik script is automatically maintained via a VBScript that gets a list of malicious IPs from firehol_level1 
-and translates it to RouterOs script. I host the script at https://binary.ph/firehol/firehol.rsc. 
-The output rsc file is synchronized from my personal computers via ftp which my vbscript updates regularly triggered by task scheduler. 
-
-The script works like an Antivirus for your network that blocks malicious IPs with Firehol_Level1's dynamic list as your database.
-
-You can learn more about the list here: http://iplists.firehol.org/
+Firetik provides robust protection against a wide range of network threats by leveraging the Firehol Levels 1-4 datasets.
 
 IMPLEMENTATION:
 
