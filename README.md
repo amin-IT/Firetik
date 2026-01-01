@@ -1,4 +1,4 @@
-Update: New domain at www.binary.ph
+Update: New domain at [www.binary.ph](https://binary.ph/mikrotik-firewall-enhance-network-security/)
 
 # Firetik 
 
