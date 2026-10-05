@@ -1,19 +1,23 @@
 Update: New domain at [www.binary.ph](https://binary.ph/mikrotik-firewall-enhance-network-security/)
 
-# Firetik 
+# Firetik
 
-This is a network firewall script that utilizes a dynamic blacklist of malicious IP addresses. The blacklist is primarily sourced from Firehol, which aggregates data from multiple threat intelligence feeds. These feeds include:
+Firetik is a MikroTik firewall script that blocks known malicious IP addresses using a daily-updated blocklist built from [FireHOL](https://iplists.firehol.org/) Levels 1–4:
 
-Fullbogons: Unroutable IP addresses.
-Spamhaus DROP and EDROP: Known spam and abuse sources.
-Dshield: Top 20 attacking Class C networks.
-Malware lists: Command and Control (C&C) IP addresses associated with malware.
+- Level 1 – the core, safest list:
+  - Fullbogons: IP ranges that should never appear on the internet (unallocated and private ranges)
+  - Spamhaus DROP: networks controlled by spammers and cybercriminals (now includes the former EDROP list)
+  - DShield: the top 20 attacking /24 networks of the last 3 days
+  - Malware C&C lists: command-and-control servers used by malware
+- Level 2 – IPs seen attacking in roughly the last 48 hours
+- Level 3 – IPs seen attacking, spamming or hosting malware in roughly the last 30 days
+- Level 4 – a more aggressive list that may occasionally block legitimate IPs
 
-Firetik provides robust protection against a wide range of network threats by leveraging the Firehol Levels 1-4 datasets.
+The firewall rule blocks devices on your network from opening new connections to these addresses, which helps stop malware from calling home and users from reaching known malicious hosts.
 
-IMPLEMENTATION:
+## Setup
 
-Code: (copy each block and paste it to terminal)
+Copy each block and paste it into the MikroTik terminal.
 ------------------------------------------------------------------------------------------------------------------------------
 # Script which will download the drop list as a text file
 ------------------------------------------------------------------------------------------------------------------------------
@@ -65,20 +69,20 @@ name="InstallFireholList" on-event="/system script run ReplaceFirehol" start-dat
 
 add chain=forward action=drop comment="Firehol list" connection-state=new dst-address-list=firehol
 
-#To effectively apply the blacklists, it's recommended to target the internet-facing interface rather than implementing a global block, 
-as the list contains private IPs. This ensures that the specified IP addresses are blocked solely on your WAN connection. For instance, 
-if the internet connection is on ether1, set the Out. Interface to ether1. For setups with multiple internet connections, 
-you can create an interface list under Interfaces > List, name it WAN, and use this list in the Out. Interface List field.
+#Limit the rule to your WAN (important)
+
+The list includes private IP ranges, so without this step the rule can block traffic inside your own network. Open the "Firehol list" rule and set Out. Interface to your internet port (e.g. `ether1`). With multiple internet connections, create an interface list named `WAN` (Interfaces → Interface List), add your WAN ports to it, and set Out. Interface List to `WAN` instead.
+
 
 ![image](https://github.com/user-attachments/assets/8602f11e-8ccc-437a-a124-cb13e4fb20fc)
 
 ------------------------------------------------------------------------------------------------------------------------------
 
-IPv6 Firewall: https://binary.ph/ipv6
+## More
 
-You may contact me for support in applying other levels, see [About page](https://binary.ph/about/).
-
-    
+- IPv6 firewall: https://binary.ph/ipv6
+- Need help applying other FireHOL levels? Contact me via the [About page](https://binary.ph/about/).
+  
 ------------------------------------------------------------------------------------------------------------------------------
 
-#Thanks to Joshaven for sharing his automated scripts and to Firehol.org for sharing their dynamic list of malicious IPs
+*Thanks to Joshaven for his automation scripts and to FireHOL.org for maintaining the blocklists.*
